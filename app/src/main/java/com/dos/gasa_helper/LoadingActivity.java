@@ -16,6 +16,10 @@ public class LoadingActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
 
+        //connect server
+
+        //get user information
+
         Intent intentSubActivity =  new Intent(LoadingActivity.this, MainActivity.class);
         startActivity(intentSubActivity);
         overridePendingTransition(0, 0);

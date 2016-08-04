@@ -22,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTvUserName;
     private ImageView mBtnSignUp;
     private ImageView mBtnSignIn;
+    private ImageView mBtnCleaning;
+    private ImageView mBtnLaundry;
+    private ImageView mBtnCarWash;
+    private ImageView mBtnDishWashing;
+    private ImageView mBtnPet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +41,72 @@ public class MainActivity extends AppCompatActivity {
         mTvUserName = (TextView) findViewById(R.id.tvUserName);
         mBtnSignUp = (ImageView) findViewById(R.id.btnSignUp);
         mBtnSignIn = (ImageView) findViewById(R.id.btnSignIn);
+        mBtnCleaning = (ImageView) findViewById(R.id.btnCleaning);
+        mBtnLaundry = (ImageView) findViewById(R.id.btnLaundry);
+        mBtnCarWash = (ImageView) findViewById(R.id.btnCarWash);
+        mBtnDishWashing = (ImageView) findViewById(R.id.btnDishWashing);
+        mBtnPet = (ImageView) findViewById(R.id.btnPet);
 
+        //set view's initial state
         mLlyMenu.setTag(false);
+
+        //set button listener
         mBtnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setMenuOpened(true);
             }
         });
+        mBtnLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        mBtnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        mBtnSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        mBtnCleaning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        mBtnLaundry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        mBtnCarWash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        mBtnDishWashing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        mBtnPet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        //set user information
     }
 
     @Override
@@ -66,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
         PropertyValuesHolder pvhSX = PropertyValuesHolder.ofFloat(View.TRANSLATION_X, fromX, toX);
         ObjectAnimator objectAnimator = ObjectAnimator.ofPropertyValuesHolder(mLlyMenu, pvhSX);
-        objectAnimator.setDuration(500);
+        objectAnimator.setDuration(300);
         objectAnimator.setInterpolator(new AccelerateInterpolator());
         objectAnimator.start();
 
