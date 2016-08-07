@@ -1,16 +1,20 @@
 package com.dos.gasa_helper;
 
-import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+/**
+ * 메인 화면 액티비티
+ * Created by Hago on 2016-07-12.
+ */
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -24,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView mBtnSignIn;
     private ImageView mBtnCleaning;
     private ImageView mBtnLaundry;
-    private ImageView mBtnCarWash;
+    private ImageView mBtnCarWashing;
     private ImageView mBtnDishWashing;
     private ImageView mBtnPet;
 
@@ -43,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnSignIn = (ImageView) findViewById(R.id.btnSignIn);
         mBtnCleaning = (ImageView) findViewById(R.id.btnCleaning);
         mBtnLaundry = (ImageView) findViewById(R.id.btnLaundry);
-        mBtnCarWash = (ImageView) findViewById(R.id.btnCarWash);
+        mBtnCarWashing = (ImageView) findViewById(R.id.btnCarWashing);
         mBtnDishWashing = (ImageView) findViewById(R.id.btnDishWashing);
         mBtnPet = (ImageView) findViewById(R.id.btnPet);
 
@@ -78,31 +82,41 @@ public class MainActivity extends AppCompatActivity {
         mBtnCleaning.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                intent.putExtra("category", getString(R.string.category_cleaning));
+                startActivity(intent);
             }
         });
         mBtnLaundry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                intent.putExtra("category", getString(R.string.category_laundry));
+                startActivity(intent);
             }
         });
-        mBtnCarWash.setOnClickListener(new View.OnClickListener() {
+        mBtnCarWashing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                intent.putExtra("category", getString(R.string.category_car_washing));
+                startActivity(intent);
             }
         });
         mBtnDishWashing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                intent.putExtra("category", getString(R.string.category_dish_washing));
+                startActivity(intent);
             }
         });
         mBtnPet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                intent.putExtra("category", getString(R.string.category_pet));
+                startActivity(intent);
             }
         });
 
@@ -110,14 +124,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
     public void onBackPressed() {
-        if ((boolean)mLlyMenu.getTag()) {
+        if ((boolean) mLlyMenu.getTag()) {
             setMenuOpened(false);
         } else {
             super.onBackPressed();
         }
     }
 
+    /**
+     * 사이드 메뉴 열고 닫기
+     *
+     * @param param true : 열림, false : 닫힘
+     */
     private void setMenuOpened(boolean param) {
         float fromX = mLlyMenu.getX();
         float toX;

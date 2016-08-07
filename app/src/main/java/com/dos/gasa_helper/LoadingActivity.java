@@ -5,10 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 
 /**
- * 로딩화면 액티비티
+ * 로딩 화면 액티비티
  * Created by Hago on 2016-07-12.
  */
-public class LoadingActivity extends Activity{
+public class LoadingActivity extends Activity {
     private static final String TAG = LoadingActivity.class.getSimpleName();
 
     @Override
@@ -20,7 +20,7 @@ public class LoadingActivity extends Activity{
 
         //get user information
 
-        Intent intentSubActivity =  new Intent(LoadingActivity.this, MainActivity.class);
+        Intent intentSubActivity = new Intent(LoadingActivity.this, MainActivity.class);
         startActivity(intentSubActivity);
         overridePendingTransition(0, 0);
 
