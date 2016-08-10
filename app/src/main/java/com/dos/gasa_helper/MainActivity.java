@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setMenuOpened(!(boolean)mLlyMenu.getTag());
+                setMenuOpened(!(boolean) mLlyMenu.getTag());
             }
         });
         mBtnLocation.setOnClickListener(new View.OnClickListener() {
