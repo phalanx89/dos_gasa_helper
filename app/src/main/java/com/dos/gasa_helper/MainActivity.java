@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         mImgUser = (ImageView) findViewById(R.id.imgUserImage);
         mTvUserName = (TextView) findViewById(R.id.tvUserName);
         mBtnSignUp = (ImageView) findViewById(R.id.btnSignUp);
-        mBtnSignIn = (ImageView) findViewById(R.id.btnSignIn);
+        mBtnSignIn = (ImageView) findViewById(R.id.btnSignin);
         mBtnCleaning = (ImageView) findViewById(R.id.btnCleaning);
         mBtnLaundry = (ImageView) findViewById(R.id.btnLaundry);
         mBtnCarWashing = (ImageView) findViewById(R.id.btnCarWashing);
@@ -77,7 +77,8 @@ public class MainActivity extends AppCompatActivity {
         mBtnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, SignInActivity.class);
+                startActivity(intent);
             }
         });
         mBtnCleaning.setOnClickListener(new View.OnClickListener() {

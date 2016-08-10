@@ -7,6 +7,6 @@
     <color name="text_gray">#FF777777</color>
     <color name="text_black">#FF000000</color>
     <color name="text_hint">#FF888888</color>
-    <color name="background_title">#14656C</color>
+    <color name="background_title">#24599e</color>
     <color name="background_content">#FFFFFF</color>
 </resources>

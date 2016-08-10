@@ -8,7 +8,7 @@
         android:id="@+id/rlyTitle"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#14656c">
+        android:background="@color/background_title">
 
         <ImageView
             android:id="@+id/btnBack"
@@ -50,26 +50,26 @@
             android:orientation="horizontal">
             <Button
                 android:id="@+id/btnKakao"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
+                android:layout_columnWeight="0.5"
+                android:layout_height="50dp"
                 android:layout_alignParentRight="true"
                 android:text="카카오"/>
             <Button
                 android:id="@+id/btnNaver"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
+                android:layout_columnWeight="0.5"
+                android:layout_height="50dp"
                 android:layout_alignParentRight="true"
                 android:text="네이버"/>
             <Button
                 android:id="@+id/btnFacebook"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
+                android:layout_columnWeight="0.5"
+                android:layout_height="50dp"
                 android:layout_alignParentRight="true"
                 android:text="페이스북"/>
             <Button
                 android:id="@+id/btnGoogle"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
+                android:layout_columnWeight="0.5"
+                android:layout_height="50dp"
                 android:layout_alignParentRight="true"
                 android:text="구글"/>
         </GridLayout>

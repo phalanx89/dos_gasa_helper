@@ -115,14 +115,14 @@
                     android:id="@+id/imgUserImage"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/default_user" />
+                    android:src="@drawable/user_character_b10" />
 
                 <TextView
                     android:id="@+id/tvUserName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imgUserImage"
-                    android:text="유저이름"
+                    android:text="@string/test"
                     android:textColor="#ffffffff" />
             </RelativeLayout>
 
@@ -130,7 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
+                android:layout_centerVertical="false"
                 android:orientation="vertical">
 
                 <ImageView
@@ -141,7 +141,7 @@
                     android:src="@drawable/btn_signup_selector" />
 
                 <ImageView
-                    android:id="@+id/btnSignIn"
+                    android:id="@+id/btnSignin"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
                     android:clickable="true"

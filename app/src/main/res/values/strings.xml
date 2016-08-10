@@ -9,4 +9,8 @@
     <string name="signup_email">이메일 주소로 회원가입</string>
     <string name="signup_sns">SNS 계정으로 회원가입</string>
     <string name="signup_agreement">약관 및 동의</string>
+    <string name="auto_signin">자동로그인</string>
+    <string name="forget_account">로그인정보를 잊으셨나요?</string>
+    <string name="btn_signin">로그인 하기</string>
+    <string name="go_to_signup_from_signin">가사도우미 회원가입하러 가기</string>
 </resources>
