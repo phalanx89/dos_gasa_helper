@@ -33,10 +33,130 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/rlyTitle">
+
         <TextView
+            android:id="@+id/tvSns"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/signup_sns"
+            android:textColor="@color/text_black"/>
+        <GridLayout
+            android:id="@+id/glySns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSns"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btnKakao"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:text="카카오"/>
+            <Button
+                android:id="@+id/btnNaver"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:text="네이버"/>
+            <Button
+                android:id="@+id/btnFacebook"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:text="페이스북"/>
+            <Button
+                android:id="@+id/btnGoogle"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:text="구글"/>
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/glySns"
             android:text="@string/signup_email"
             android:textColor="@color/text_black"/>
+        <LinearLayout
+            android:id="@+id/llyEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvEmail"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+                <EditText
+                    android:id="@+id/edtEmail"
+                    android:layout_width="300dp"
+                    android:layout_height="match_parent"
+                    android:hint="이메일을 입력해주세요."
+                    android:textColorHint="@color/text_hint"/>
+                <Button
+                    android:id="@+id/btnCheckSame"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:text="중복확인"/>
+            </RelativeLayout>
+            <EditText
+                android:id="@+id/edtNickname"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="닉네임(성명)을 입력해주세요."
+                android:textColorHint="@color/text_hint"/>
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="비밀번호를 입력해주세요."
+                android:textColorHint="@color/text_hint"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvAgreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llyEmail"
+            android:text="@string/signup_agreement"
+            android:textColor="@color/text_black"/>
+
+        <LinearLayout
+            android:id="@+id/llyAgreement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAgreement"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <CheckBox
+                    android:id="@+id/cbxAll"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:checked="false"/>
+                <TextView
+                    android:id="@+id/tvCheckAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/cbxAll"
+                    android:layout_centerVertical="true"
+                    android:text="전체동의"
+                    android:textColor="@color/text_black"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/llyAgreement"
+            android:text="회원가입"/>
+
     </RelativeLayout>
 </RelativeLayout>

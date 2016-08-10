@@ -70,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
         mBtnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+                startActivity(intent);
             }
         });
         mBtnSignIn.setOnClickListener(new View.OnClickListener() {

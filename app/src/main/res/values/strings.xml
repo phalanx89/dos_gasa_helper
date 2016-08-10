@@ -8,4 +8,5 @@
     <string name="category_pet">애완동물 돌보기</string>
     <string name="signup_email">이메일 주소로 회원가입</string>
     <string name="signup_sns">SNS 계정으로 회원가입</string>
+    <string name="signup_agreement">약관 및 동의</string>
 </resources>
