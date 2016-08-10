@@ -3,6 +3,7 @@ package com.dos.gasa_helper;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -42,7 +43,7 @@ public class CategoryActivity extends Activity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                Log.e(TAG, ((CategoryListViewItem)mListViewAdapter.getItem(position)).userName);
             }
         });
 
