@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 /**
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView mBtnLocation;
     private TextView mTvLocation;
     private LinearLayout mLlyMenu;
+    private RelativeLayout mRlyTitle;
+    private RelativeLayout mRlyContent;
     private ImageView mImgUser;
     private TextView mTvUserName;
     private ImageView mBtnSignUp;
@@ -41,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         mBtnLocation = (ImageView) findViewById(R.id.btnLocation);
         mTvLocation = (TextView) findViewById(R.id.tvLocation);
         mLlyMenu = (LinearLayout) findViewById(R.id.llyMenu);
+        mRlyTitle = (RelativeLayout) findViewById(R.id.rlyTitle);
+        mRlyContent = (RelativeLayout) findViewById(R.id.rlyContent);
         mImgUser = (ImageView) findViewById(R.id.imgUserImage);
         mTvUserName = (TextView) findViewById(R.id.tvUserName);
         mBtnSignUp = (ImageView) findViewById(R.id.btnSignUp);
@@ -58,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setMenuOpened(true);
+                setMenuOpened(!(boolean)mLlyMenu.getTag());
             }
         });
         mBtnLocation.setOnClickListener(new View.OnClickListener() {
@@ -146,12 +151,18 @@ public class MainActivity extends AppCompatActivity {
      */
     private void setMenuOpened(boolean param) {
         float fromX = mLlyMenu.getX();
+        float fromX2 = mRlyTitle.getX();
         float toX;
+        float toX2;
         if (param) {
             toX = fromX + mLlyMenu.getMeasuredWidth();
+            toX2 = fromX2 + mLlyMenu.getMeasuredWidth();
         } else {
             toX = fromX - mLlyMenu.getMeasuredWidth();
+            toX2 = fromX2 - mLlyMenu.getMeasuredWidth();
         }
+
+        mLlyMenu.setTag(param);
 
         PropertyValuesHolder pvhSX = PropertyValuesHolder.ofFloat(View.TRANSLATION_X, fromX, toX);
         ObjectAnimator objectAnimator = ObjectAnimator.ofPropertyValuesHolder(mLlyMenu, pvhSX);
@@ -159,6 +170,16 @@ public class MainActivity extends AppCompatActivity {
         objectAnimator.setInterpolator(new AccelerateInterpolator());
         objectAnimator.start();
 
-        mLlyMenu.setTag(param);
+        PropertyValuesHolder pvhSX2 = PropertyValuesHolder.ofFloat(View.TRANSLATION_X, fromX2, toX2);
+        ObjectAnimator objectAnimator2 = ObjectAnimator.ofPropertyValuesHolder(mRlyTitle, pvhSX2);
+        objectAnimator2.setDuration(300);
+        objectAnimator2.setInterpolator(new AccelerateInterpolator());
+        objectAnimator2.start();
+
+        PropertyValuesHolder pvhSX3 = PropertyValuesHolder.ofFloat(View.TRANSLATION_X, fromX2, toX2);
+        ObjectAnimator objectAnimator3 = ObjectAnimator.ofPropertyValuesHolder(mRlyContent, pvhSX3);
+        objectAnimator3.setDuration(300);
+        objectAnimator3.setInterpolator(new AccelerateInterpolator());
+        objectAnimator3.start();
     }
 }
